@@ -1,4 +1,3 @@
-```markdown
 # AI Content Improver
 
 A monolithic application that automates the process of enhancing content. It ingests raw articles, scrapes the web for real-time competitor insights, and uses Generative AI to rewrite and improve the content with citations.
@@ -36,8 +35,6 @@ Start the database container.
 ```bash
 # In the root directory
 docker-compose up -d
-
-```
 
 * **Database:** `127.0.0.1:3306`
 * **User/Pass:** `root` / `rootpassword`
