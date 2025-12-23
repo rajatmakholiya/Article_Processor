@@ -1,0 +1,61 @@
+# --- Global / OS ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# --- Docker & Database ---
+# Ignore the local database volume data
+db_data/
+mysql_data/
+
+# --- Python (Root Script) ---
+venv/
+__pycache__/
+*.py[cod]
+
+# --- Node.js (Frontend & Worker) ---
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --- Frontend Specific (React/Vite) ---
+frontend/dist/
+frontend/build/
+frontend/coverage/
+
+# --- Backend Specific (Laravel) ---
+backend/vendor/
+backend/node_modules/
+backend/public/hot
+backend/public/storage
+backend/storage/*.key
+backend/storage/framework/cache/data/*
+backend/storage/framework/sessions/*
+backend/storage/framework/testing/*
+backend/storage/framework/views/*
+backend/storage/logs/*
+!backend/storage/app/public/.gitignore
+!backend/storage/framework/cache/data/.gitignore
+!backend/storage/framework/sessions/.gitignore
+!backend/storage/framework/testing/.gitignore
+!backend/storage/framework/views/.gitignore
+
+# Ignore Laravel Environment Files
+backend/.env
+backend/.env.backup
+backend/.phpunit.result.cache
+
+# --- Worker Specific ---
+worker/node_modules/
+worker/.env
+
+# --- Optional: Ignore Raw Articles ---
+# Uncomment below if you don't want to commit the word docs
+# articles/*.docx

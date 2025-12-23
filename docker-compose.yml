@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # The Database
+  db:
+    image: mysql:8.0
+    container_name: content_improver_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  # Change this!
+      MYSQL_DATABASE: content_improver
+      MYSQL_USER: laravel_user
+      MYSQL_PASSWORD: laravel_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # The Visual Interface (PHPMyAdmin)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: content_improver_pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    ports:
+      - "8080:80"
+
+volumes:
+  db_data:
