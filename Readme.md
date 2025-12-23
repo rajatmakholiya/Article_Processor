@@ -1,7 +1,7 @@
-Here is the clean README content without any emojis, ready for you to copy.
-
 ```markdown
 # AI Content Improver
+
+A monolithic application that automates the process of enhancing content. It ingests raw articles, scrapes the web for real-time competitor insights, and uses Generative AI to rewrite and improve the content with citations.
 
 ![Laravel](https://img.shields.io/badge/Backend-Laravel_11-red)
 ![React](https://img.shields.io/badge/Frontend-React_Vite-blue)
@@ -9,38 +9,10 @@ Here is the clean README content without any emojis, ready for you to copy.
 ![MySQL](https://img.shields.io/badge/Database-MySQL_8.0-orange)
 ![Gemini](https://img.shields.io/badge/AI-Google_Gemini_2.0-purple)
 
-A monolithic application that automates the process of enhancing content. It ingests raw articles, scrapes the web for real-time competitor insights, and uses Generative AI to rewrite and improve the content with citations.
-
 ---
 
 ## Architecture & Data Flow
-
-```mermaid
-graph TD
-    subgraph Data Source
-        A[Raw .docx Files] -->|Python Script| B[(MySQL Database)]
-    end
-
-    subgraph Backend [Laravel API]
-        B <-->|Read/Write| C[Laravel Controller]
-        C <-->|JSON API| D[API Endpoints]
-    end
-
-    subgraph Automation [Node.js Worker]
-        D -->|Fetch Pending| E[Worker Script]
-        E -->|Search Keywords| F[Google Search]
-        F -->|Scrape Blogs| G[Competitor Content]
-        G -->|Context + Prompt| H[Gemini AI]
-        H -->|Enhanced Content| E
-        E -->|Update Article| D
-    end
-
-    subgraph Frontend [React UI]
-        D -->|Fetch Articles| I[Dashboard]
-        I -->|Display| J[Comparison View]
-    end
-
-```
+![flow.png](flow.png)
 
 ---
 
